@@ -1,5 +1,5 @@
 /************************
-* Variables and type coerecion
+* Variables and type coercion
 */
 /*var firstName = 'John';
 var age = 28;
@@ -63,7 +63,7 @@ console.log(typeof x);
 /****************************
 * Operator Precedence
 */
-
+/*
 var now = 2018;
 var yearJohn = 1989;
 var fullAge = 18;
@@ -93,6 +93,7 @@ x += 10;
 console.log(x); // 62
 x++;
 console.log(x); // 63
+*/
 
 
 
