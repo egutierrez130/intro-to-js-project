@@ -165,10 +165,55 @@ var firstName = 'John';
 var age = 20;
 
 // ternary, because it has three operands
+// it has condition, if, and else
 age >= 18 ? console.log(firstName + ' drinks beer.')
 : console.log(firstName + ' drinks juice.');
 
+var drink = age >= 18 ? 'beer' : 'juice';
+console.log(drink);
 
+/*code below is the same as ternary code above
+if (age >= 18) {
+  var drink = 'beer';
+} else {
+  var drink = 'juice';
+}
+*/
+
+// Switch statement
+// Just like if and else if statements...except it looks "cleaner"
+var job = 'teacher';
+switch (job) {
+  case 'teacher':
+  case 'instructor':
+    console.log(firstName + ' teaches kids how to code.');
+    break;
+  case 'driver':
+    console.log(firstName + ' drives an uber in Lisbon.');
+    break;
+  case 'designer':
+    console.log(firstName + ' designs beautiful websites.');
+    break;
+  default:
+    console.log(firstName + ' does something else.');
+}
+
+
+
+
+switch (true) {
+  case age < 13:
+    console.log(firstName + ' is a boy.');
+    break;
+  case age >= 13 && age < 20:
+    console.log(firstName + ' is a teenager.');
+    break;
+  case age >=20 && age < 30:
+    console.log(firstName + ' is a young man.');
+    break;
+  default:
+    console.log(firstName + ' is a man.');
+}
 
 
 
