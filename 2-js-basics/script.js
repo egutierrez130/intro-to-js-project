@@ -63,7 +63,7 @@ console.log(typeof x);
 /****************************
 * Operator Precedence
 */
-
+/*
 var now = 2018;
 var yearJohn = 1989;
 var fullAge = 18;
@@ -93,6 +93,82 @@ x += 10;
 console.log(x); // 62
 x++;
 console.log(x); // 63
+*/
+
+
+/*********************************
+* If / else statements
+*/
+
+/*
+var firstName = 'John';
+var civilStatus = 'single';
+
+if (civilStatus === 'married') {
+  console.log(firstName + ' is married!');
+} else {
+  console.log(firstName + ' will hopefully marry soon :)');
+}
+
+
+var isMarried = true;
+if (isMarried) {
+  console.log(firstName + ' is married!');
+} else {
+  console.log(firstName + ' will hopefully marry soon :)');
+}
+
+
+var marksMass, johnsMass, marksHeight, johnsHeight;
+marksMass = 79.4; // kg
+marksHeight = 1.74; // meters
+johnsMass = 95.26;
+johnsHeight = 1.83;
+
+var marksBMI = marksMass / (marksHeight ** 2);
+var johnsBMI = johnsMass / (johnsHeight ** 2);
+
+if (marksBMI > johnsBMI) {
+  console.log('Mark\'s BMI is higher than John\'s.');
+} else {
+  console.log('John\'s BMI is higher than Mark\'s.');
+}
+*/
+
+
+/*****************************
+* Boolean Logic
+AND (&&)  => true if ALL are true
+OR  (||)  => true if ONE is true
+NOT (!)   => inverts true/false value
+*/
+/*
+var firstName = 'John';
+var age = 20;
+
+if (age < 13) {
+    console.log(firstName + ' is a boy.');
+ } else if (age >= 13 && age < 20) {
+    console.log(firstName + ' is a teenager.');
+ } else if (age >= 20 && age < 30) {
+   console.log(firstName + ' is a young man.');
+ } else {
+    console.log(firstName + ' is a man.');
+}
+*/
+/********************************
+* The Ternary Operator and Switch statements
+*/
+
+// The ternary allows us to write like an if...else statement all in one line.
+var firstName = 'John';
+var age = 20;
+
+// ternary, because it has three operands
+age >= 18 ? console.log(firstName + ' drinks beer.')
+: console.log(firstName + ' drinks juice.');
+
+
 
 
 
