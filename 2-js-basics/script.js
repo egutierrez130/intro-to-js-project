@@ -161,6 +161,7 @@ if (age < 13) {
 */
 
 // The ternary allows us to write like an if...else statement all in one line.
+/*
 var firstName = 'John';
 var age = 20;
 
@@ -182,6 +183,7 @@ if (age >= 18) {
 
 // Switch statement
 // Just like if and else if statements...except it looks "cleaner"
+/*
 var job = 'teacher';
 switch (job) {
   case 'teacher':
@@ -197,10 +199,10 @@ switch (job) {
   default:
     console.log(firstName + ' does something else.');
 }
+*/
 
 
-
-
+/*
 switch (true) {
   case age < 13:
     console.log(firstName + ' is a boy.');
@@ -214,6 +216,38 @@ switch (true) {
   default:
     console.log(firstName + ' is a man.');
 }
+*/
+
+
+/******************************
+* Truthy and Falsy Values and equality Operators
+*/
+
+// falsy values: undefined, null, 0, '', NaN
+// truthy values: NOT falsy values
+// good way to check if a variable has been defined
+
+/*
+var height;
+
+height = 23;
+
+if (height || height === 0) {
+    console.log('Variable is defined');
+} else {
+  console.log('Variable has NOT been defined');
+}
+
+// Equality Operators
+if (height === '23') {
+    console.log('The == operator does type coercion');
+} else {
+  console.log('This is a === operator that is very strict!');
+}
+*/
+// Best practice is to use the === operators.
+
+
 
 
 
