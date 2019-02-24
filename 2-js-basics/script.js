@@ -247,6 +247,37 @@ if (height === '23') {
 */
 // Best practice is to use the === operators.
 
+/*********************************
+* Functions
+*/
+
+// you can pass either 0 or multiple arguments in the the function parantheses, separated by commas.
+// I like to think of a function as like a machine that receives some input, then it does some stuff with it  and finally returns something else.
+// the DRY principle is why we use functions. (" Don't Repeat Yourself")
+
+function calculateAge(birthYear) {
+    return 2019 - birthYear;
+}
+// time to pass in the argument in the parantheses
+// we need to store the result somewhere so we create a variable for that age.
+var ageEdgar = calculateAge(1992);
+var ageBlanca = calculateAge(1968);
+var ageTony = calculateAge(1968);
+var ageJackie = calculateAge(1996);
+console.log(ageEdgar, ageBlanca, ageTony, ageJackie);
+
+
+// this is a function that calculates the years until retirement.
+// functions can also call other functions. Very usefull.
+// functions do not have to return anything. Which is why we didn't store anything in this example. We just console logged it.
+function yearsUntilRetirement(year, firstName) {
+  var age = calculateAge(year);
+  var retirement = 65 - age;
+  console.log(firstName + ' retires in ' + retirement + ' years ');
+}
+
+yearsUntilRetirement(1992, 'Edgar');
+
 
 
 
