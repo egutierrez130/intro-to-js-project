@@ -254,7 +254,7 @@ if (height === '23') {
 // you can pass either 0 or multiple arguments in the the function parantheses, separated by commas.
 // I like to think of a function as like a machine that receives some input, then it does some stuff with it  and finally returns something else.
 // the DRY principle is why we use functions. (" Don't Repeat Yourself")
-
+/*
 function calculateAge(birthYear) {
     return 2019 - birthYear;
 }
@@ -273,19 +273,57 @@ console.log(ageEdgar, ageBlanca, ageTony, ageJackie);
 function yearsUntilRetirement(year, firstName) {
   var age = calculateAge(year);
   var retirement = 65 - age;
-  console.log(firstName + ' retires in ' + retirement + ' years ');
+
+  if (retirement > 0) {
+    console.log(firstName + ' retires in ' + retirement + ' years ');
+  } else {
+    console.log(firstName + ' is already retired.');
+  }
 }
 
+
 yearsUntilRetirement(1992, 'Edgar');
+yearsUntilRetirement(1996, 'Jackie');
+yearsUntilRetirement(1968, 'Blanca');
+yearsUntilRetirement(1953, 'Tony');
+*/
+
+/**********************************
+* Function Statements and Expressions
+*/
+
+// Function Declaration
+// function whatDoYouDo(job, firstName) {}
+
+// Function Expression
+/*
+var whatDoYouDo = function(job, firstName) {
+  switch(job) {
+    case 'teacher':
+      return firstName + ' teaches kids how to code.';
+    case 'driver':
+      return firstName + ' drives a cab around Fresno.';
+    case 'designer':
+      return firstName + ' designs beautiful websites.';
+    default:
+      return firstName + ' does something else.';
+  }
+}
+
+console.log(whatDoYouDo('teacher', 'John'));
+console.log(whatDoYouDo('designer', 'Mike'));
+console.log(whatDoYouDo('coach', 'Eli'));
+*/
+/* Difference between Expressions and Statements
+JavaScript expressons are pieces of code that always produce a value, and it doesn't matter how long they are as long as the code results in a single value, and then it is an expression.
+
+JavaScript statments perform actions. They do things but they do not produce immediate results, so things like if else statements, a while loop, or even a function declaration. They don't produce any immediate value.
 
 
 
 
 
-
-
-
-
+*/
 
 
 
