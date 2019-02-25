@@ -325,6 +325,7 @@ JavaScript statments perform actions. They do things but they do not produce imm
 */
 
 // Things inside arrays are called [elements]
+/*
 var names = ['John', 'Mark', 'Jane'];
 var years = new Array(1990, 1969, 1948);
 
@@ -355,7 +356,40 @@ console.log(john.indexOf(1990)); // if we want to know the position of an elemen
 
 var isDesigner = john.indexOf('designer') === -1  ? 'John is not a designer' : 'John is a designer';
 console.log(isDesigner);
+*/
 
+
+/*********************************
+* Objects and Properties
+*/
+
+// Object literal
+var john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  birthYear: 1990,
+  family: ['Jane', 'Mark', 'Bob', 'Emily'],
+  job: 'teacher',
+  isMarried: false
+};
+// all of the different ways of calling the properties
+console.log(john);
+console.log(john.lastName); // using the dot"." to call the properties of the object.
+console.log(john['lastName']);
+var x = 'birthYear'; // using variables. can be useful.
+console.log(john[x]);
+
+// mutating data
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+// new Object syntax
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1990;
+jane['lastName'] = 'Smith';
+console.log(jane);
 
 
 
