@@ -318,12 +318,51 @@ console.log(whatDoYouDo('coach', 'Eli'));
 JavaScript expressons are pieces of code that always produce a value, and it doesn't matter how long they are as long as the code results in a single value, and then it is an expression.
 
 JavaScript statments perform actions. They do things but they do not produce immediate results, so things like if else statements, a while loop, or even a function declaration. They don't produce any immediate value.
-
-
-
-
-
 */
+
+/***************************************
+* Arrays
+*/
+
+// Things inside arrays are called [elements]
+var names = ['John', 'Mark', 'Jane'];
+var years = new Array(1990, 1969, 1948);
+
+// This is how we retrieve data from Arrays
+console.log(names); // prints a list of all elements in arrays.
+console.log(names.length); // prints number of elements in array.
+console.log(names[0]);
+
+// Mutate array data aka change/manipulate
+names[1] = 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+// Different Data Types
+var john = ['John', 'Smith', 1990, 'teacher', 'designer', false];
+
+// Methods
+john.push('blue'); // push will add an element at the end of the array.
+john.unshift('Mr.'); // adds element to the beginning of the array.
+console.log(john);
+
+john.pop(); // removes element from the end.
+john.shift(); // removes element from the front of array.
+console.log(john);
+
+console.log(john.indexOf(1990)); // if we want to know the position of an element.
+// if we pass in an element that is not in the array, the console will return "-1".
+
+var isDesigner = john.indexOf('designer') === -1  ? 'John is not a designer' : 'John is a designer';
+console.log(isDesigner);
+
+
+
+
+
+
+
+
 
 
 
