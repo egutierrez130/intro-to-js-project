@@ -364,6 +364,7 @@ console.log(isDesigner);
 */
 
 // Object literal
+/*
 var john = {
   firstName: 'John',
   lastName: 'Smith',
@@ -390,6 +391,49 @@ jane.firstName = 'Jane';
 jane.birthYear = 1990;
 jane['lastName'] = 'Smith';
 console.log(jane);
+*/
+
+
+/*******************************
+* Objects and Methods
+*/
+// We can attach functions to objects, called methods.
+// Basic functionality of methods.
+var john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  birthYear: 1990,
+  family: ['Jane', 'Mark', 'Bob', 'Emily'],
+  job: 'teacher',
+  isMarried: false,
+  calcAge: function(birthYear) {
+    return 2018 - birthYear;
+  }
+};
+
+console.log(john.calcAge(1990));
+
+//OR we can use the "this" keyword in objects, which basically points to itself.
+// Using the this keyword in example below, rather than using the code above.
+// "this" is a powerfull tool in JS!
+var edgar = {
+  firstName: 'Edgar',
+  lastName: 'Gutierrez',
+  birthYear: 1992,
+  family: ['Jane', 'Mark', 'Bob', 'Emily'],
+  job: 'teacher',
+  isMarried: false,
+  calcAge: function() {
+    this.age = 2018 - this.birthYear; // this. = var edgar...remember it points to itself.
+  }
+};
+// we can do it all in one line by "setting" the property
+edgar.calcAge();
+console.log(edgar);
+
+
+
+
 
 
 
