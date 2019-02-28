@@ -1,6 +1,8 @@
+
 /************************
 * Variables and type coerecion
 */
+// you can think of "variables" as a piece of memory in your computer.
 /*var firstName = 'John';
 var age = 28;
 // Type coercion
