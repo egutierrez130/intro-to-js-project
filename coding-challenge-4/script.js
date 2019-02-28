@@ -12,12 +12,20 @@ var mark = {
   fullName: 'Mark',
   mass: 79.4,
   height: 1.74,
+  calcBMI: function(){
+    this.bmi = this.mass / (this.height ** 2);
+  }
 };
+mark.calcBMI();
+console.log(mark);
 
 var john = {
   fullName: 'John',
   mass: 95.26,
-  height: 1.83
+  height: 1.83,
+  calcBMI: function(){
+    this.bmi = this.mass / (this.height ** 2);
+  }
 };
-
-console.log(mark,john);
+john.calcBMI();
+console.log(john);
