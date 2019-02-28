@@ -14,10 +14,9 @@ var mark = {
   height: 1.74,
   calcBMI: function(){
     this.bmi = this.mass / (this.height ** 2);
+    return this.bmi;
   }
 };
-mark.calcBMI();
-console.log(mark);
 
 var john = {
   fullName: 'John',
@@ -25,7 +24,14 @@ var john = {
   height: 1.83,
   calcBMI: function(){
     this.bmi = this.mass / (this.height ** 2);
+    return this.bmi;
   }
 };
-john.calcBMI();
-console.log(john);
+
+if (mark.calcBMI() > john.calcBMI()) {
+  console.log(mark.fullName + ' has a higher BMI of ' + mark.bmi);
+} else if (john.bmi > mark.bmi) {
+  console.log(john.fullName + ' has a higher BMI of ' + john.bmi);
+} else {
+  console.log('They have the same BMI.');
+}
