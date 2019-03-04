@@ -17,9 +17,12 @@ var mark = {
     return this.bmi;
   }
 };
+mark.calcBMI();
+console.log(mark);
 
 var john = {
   fullName: 'John',
+  
   mass: 95.26,
   height: 1.83,
   calcBMI: function(){
@@ -27,6 +30,8 @@ var john = {
     return this.bmi;
   }
 };
+john.calcBMI();
+console.log(john);
 
 if (mark.calcBMI() > john.calcBMI()) {
   console.log(mark.fullName + ' has a higher BMI of ' + mark.bmi);
