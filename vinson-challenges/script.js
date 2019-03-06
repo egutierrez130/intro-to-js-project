@@ -17,3 +17,8 @@ console.log(checkAge(51));
 
 const myArray = ['a','b','c','d','e'];
 console.log(myArray[3]);
+
+/****************************
+* March 5th, 2019
+* Write a Function that will take a number as a parameter. Create that many h1 tags, write text in them and place them all in the body.
+*/

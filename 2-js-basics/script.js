@@ -401,7 +401,7 @@ console.log(jane);
 */
 // We can attach functions to objects, called methods.
 // Basic functionality of methods.
-var john = {
+/*var john = {
   firstName: 'John',
   lastName: 'Smith',
   birthYear: 1990,
@@ -432,8 +432,60 @@ var edgar = {
 // we can do it all in one line by "setting" the property
 edgar.calcAge();
 console.log(edgar);
+*/
 
 
+/***************************************
+* Loops and Iteration
+*/
+// We can automate repetitive tasks using loops.
+// Instead of doing all of this, we can do use a loop shown below.
+// console.log(1);
+// console.log(1);
+// console.log(1);
+// console.log(1);
+// console.log(1);
+// console.log(1);
+// console.log(1);
+// WE use this below.
+
+// For Loop
+
+// Explanation of Code Below
+// Loop continues to run until the condition is no longer true. It will then exit the loop.
+
+// i = 0, 0 < 10 true, log i to console, i++
+// i = 1, 1 < 10 true, log i to console, i++
+// ...
+// i = 9, 9 < 10 true, log i to console, i++
+// i = 10, 10 < 10 FALSE, exit the loop!
+
+// for(var i = 0; i < 10; i++) {
+//   console.log(i);
+// }
+
+// // We can also skip numbers that will print to the console by letting the code know. (i += 2)
+
+// for(var i = 1; i <= 20; i += 5) {
+//   console.log(i);
+// }
+
+// Explanation of code below:
+// We start at i = 0 because our array has a value in index 0. We use i++ because we want to have each index value displayed in the cosole. john.length automatically detects all of the values in the array, a very cool aspect of JS.
+
+var john = ['John', 'Smith', 1990, 'designer', false];
+for (var i = 0; i < john.length; i++){
+  console.log(john[i]);
+}
+
+// While Loop
+// Code does the same as the for loop above.
+
+var i = 0;
+while(i < john.length) {
+  console.log(john[i]);
+  i++;
+}
 
 
 
