@@ -472,7 +472,7 @@ console.log(edgar);
 
 // Explanation of code below:
 // We start at i = 0 because our array has a value in index 0. We use i++ because we want to have each index value displayed in the cosole. john.length automatically detects all of the values in the array, a very cool aspect of JS.
-
+/*
 var john = ['John', 'Smith', 1990, 'designer', false];
 for (var i = 0; i < john.length; i++){
   console.log(john[i]);
@@ -486,7 +486,26 @@ while(i < john.length) {
   console.log(john[i]);
   i++;
 }
+*/
 
+// continue and break Statements
+// we use "continue" to quit just the current iteration fo the loop and then continue right to the next one.
+ var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+for (var i = 0; i < john.length; i++){
+  if (typeof john[i] !== 'string') continue;
+  console.log(john[i]);
+}
+
+// we use "break" to stop the loop. It will not conitinue to the next iteration element.
+for (var i = 0; i < john.length; i++){
+  if (typeof john[i] !== 'string') break;
+  console.log(john[i]);
+}
+
+// Looping Backwards
+for (var i = john.length - 1; i >= 0; i--){
+  console.log(john[i]);
+}
 
 
 
