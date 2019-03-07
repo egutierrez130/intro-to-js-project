@@ -507,6 +507,11 @@ for (var i = john.length - 1; i >= 0; i--){
   console.log(john[i]);
 }
 
+var bills = [124, 48, 268, 180, 42];
+for (var i = 0; i < bills.length; i++){
+  if (typeof bills[i] < 50);
+  console.log(bills[i]);
+}
 
 
 
