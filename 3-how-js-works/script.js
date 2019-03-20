@@ -52,7 +52,7 @@ Hoisting with functions only works with function declarations.
 */
 // Works because it is a function declaration.
 // We called the function before it was created.
-calculateAge(1990);
+/*calculateAge(1990);
 
 function calculateAge(year) {
   console.log(2016 - year);
@@ -77,6 +77,49 @@ function foo() {
 }
 foo();
 console.log(age);
+*/
+
+
+/***************************************
+* Lecture 40 - Scoping and the Scope Chain
+*/
+
+
+// Scoping answers the question "where can we access a certain variable"
+// Each new function creates a scope: the space/environment, in which the variables it defines are accessible.
+// Lexical Scoping: a function that is lexically within another function gets access to the scope of the outer function.
+
+// Scope Chain Example
+/*var a = 'Hello!';
+first();
+
+function first(){
+  var b = 'Hi!';
+  second();
+
+  function second(){
+    var c = 'Hey!';
+    third()
+  }
+}
+
+function third() {
+  var d = 'John';
+  // console.log(c);
+  console.log(a+d);
+}
+*/
+
+
+/**************************************
+* Lecture 40 - The 'This' Keyword
+*/
+
+// Regular function call: the this Keyword points at the global object, (the window object, in the browser).
+// Method call: the this variable points to the object that is calling the method.
+// The this keyword is not assigned a value until a function where it is defined is actually called.
+// Invoked and called are the same thing.
+
 
 
 
