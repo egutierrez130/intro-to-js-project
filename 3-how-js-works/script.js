@@ -112,7 +112,7 @@ function third() {
 
 
 /**************************************
-* Lecture 40 - The 'This' Keyword
+* Lecture 41 - The 'This' Keyword
 */
 
 // Regular function call: the this Keyword points at the global object, (the window object, in the browser).
@@ -120,6 +120,45 @@ function third() {
 // The this keyword is not assigned a value until a function where it is defined is actually called.
 // Invoked and called are the same thing.
 
+
+/**************************************
+* Lecture 41 - The 'this' Keyword in Practice
+*/
+
+// console.log(this);
+/*
+calculateAge(1985);
+
+function calculateAge(year) {
+  console.log(2016 - year);
+  console.log(this);
+}
+*/
+var john = {
+  name: 'John',
+  yearOfBirth: 1990,
+  calculateAge: function() {
+    console.log(this);
+    console.log(2016 - this.yearOfBirth);
+
+    /*
+    function innerFunction() {
+      console.log(this);
+    }
+    innerFunction();
+    */
+  }
+}
+
+john.calculateAge();
+
+var mike = {
+  name: 'Mike',
+  yearOfBirth: 1984
+};
+// method borrowing
+mike.calculateAge = john.calculateAge;
+mike.calculateAge();
 
 
 
