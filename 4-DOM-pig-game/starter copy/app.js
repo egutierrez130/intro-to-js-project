@@ -8,3 +8,40 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
+
+var scores, roundScore, activePlayer, dice;
+
+scores = [0,0];
+roundScore = 0;
+activePlayer = 0;
+
+dice = Math.floor(Math.random()*6 + 1);
+
+// referred to as a setter
+document.querySelector('#current-' + activePlayer).textContent = dice;
+// document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
+
+// this was created to read the content of the element and then store it into x
+// referred to as a getter
+var x = document.querySelector('#score-0').textContent;
+console.log(x);
+
+// using the querySelector to change the CSS.
+// we use 'style' to call the CSS.
+// we use 'display' to call the CSS property.
+// we use 'none' to call the CSS value.
+document.querySelector('.dice').style.display = 'none';
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
