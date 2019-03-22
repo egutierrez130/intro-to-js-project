@@ -9,13 +9,13 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, dice;
+var scores, roundScore, activePlayer;
 
 scores = [0,0];
 roundScore = 0;
 activePlayer = 0;
 
-dice = Math.floor(Math.random()*6 + 1);
+
 
 // referred to as a setter
 document.querySelector('#current-' + activePlayer).textContent = dice;
@@ -32,8 +32,32 @@ console.log(x);
 // we use 'none' to call the CSS value.
 document.querySelector('.dice').style.display = 'none';
 
+// Event Listeners
+// We need to pass in two arguments: 1.event types 2.function that will happen once the event happens. The name of the of the function becomes "call-back function" because its a function that is called by another function.
+
+// this was an example for using a built in function in the addEventListener //document.querySelector('.btn-roll').addEventListener('click', btn);
+// function btn(){
+//   // do something there
+// }
+
+// document.querySelector('.btn-roll').addEventListener('click', btn);
+// or you can pass in an anonymous function.
+// the anonymous function will not have a name.
+// can not be reused.
+document.querySelector('.btn-roll').addEventListener('click', function(){
+
+  // 1. Random number
+  var dice = Math.floor(Math.random() * 6)+ 1;
+
+  // 2. Display the result
+  var diceDOM = document.querySelector('.dice');
+  diceDOM.style.display = 'block';
+  diceDOM.src = 'dice-' + dice + '.png';
 
 
+  // 3. Update the round score IF the rolled number was NOT a 1.
+
+});
 
 
 
