@@ -17,3 +17,7 @@
 // Event listener: A function that performs an action based on a certain event. It waits for a specific event to happen.
 // basically sits and waits for something to happen.
 // need to remember the execution stack.
+
+/*************************
+* Lecture 50 - Updating Scores and Changing the Active Player
+*/

@@ -15,22 +15,17 @@ scores = [0,0];
 roundScore = 0;
 activePlayer = 0;
 
-
-
-// referred to as a setter
-document.querySelector('#current-' + activePlayer).textContent = dice;
-// document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
-
-// this was created to read the content of the element and then store it into x
-// referred to as a getter
-var x = document.querySelector('#score-0').textContent;
-console.log(x);
-
 // using the querySelector to change the CSS.
 // we use 'style' to call the CSS.
 // we use 'display' to call the CSS property.
 // we use 'none' to call the CSS value.
 document.querySelector('.dice').style.display = 'none';
+
+// "getElementById" is a little faster than "querySelector"
+document.getElementById('score-0').textContent = '0';
+document.getElementById('score-1').textContent = '0';
+document.getElementById('current-0').textContent = '0';
+document.getElementById('current-1').textContent = '0';
 
 // Event Listeners
 // We need to pass in two arguments: 1.event types 2.function that will happen once the event happens. The name of the of the function becomes "call-back function" because its a function that is called by another function.
@@ -56,6 +51,29 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
 
 
   // 3. Update the round score IF the rolled number was NOT a 1.
+  if (dice !== 1) {
+    //Add Scores
+    roundScore += dice;
+    document.querySelector('#current-' + activePlayer).textContent = roundScore;
+
+  } else {
+    //Next player
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+    roundScore = 0;
+
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+
+    // removing and adding classes below
+    // document.querySelector('.player-0-panel').classList.remove('active');
+    // document.querySelector('.player-1-panel').classList.add('active');
+
+    document.querySelector('.dice').style.display = 'none';
+
+  }
 
 });
 
@@ -67,5 +85,11 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
 
 
 
+// referred to as a setter
+document.querySelector('#current-' + activePlayer).textContent = dice;
+// document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
 
+// this was created to read the content of the element and then store it into x
+// referred to as a getter
+// var x = document.querySelector('#score-0').textContent;
 //
