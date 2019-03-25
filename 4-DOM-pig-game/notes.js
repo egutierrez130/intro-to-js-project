@@ -19,5 +19,8 @@
 // need to remember the execution stack.
 
 /*************************
-* Lecture 50 - Updating Scores and Changing the Active Player
+* Lecture 53 - Finishing Touches: Learning State Variables
 */
+// A state variable simply tells us the conditon of a sytstem.
+// We need a state variable when we need to remember something or the state of something.
+// In our app, we need to know if our game IS playing or NOT playing. We will create a variable that will tell us this so we can use it in our function.
