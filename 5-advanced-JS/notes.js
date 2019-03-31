@@ -14,3 +14,29 @@
 * The prototype property of an object is where we put methods and properties that we want other properties to inherit.
 * The protoype chain is what makes all this inheritance possible, and here is how it works: JS will first try to find that method on that exact object. But if it cannot find it, it will look in the object's prototype, which is the prototype property of it's parent so it moves up in the in the chain. If it finds none, it will be null. ** Null is the only one that has no prototype and is therefore the final link in the protoype chain. UNDEFINED IS returned. 9
 */
+
+// Object
+var edgar = {
+    name: 'Edgar',
+    yearOfBirth: 1992,
+    job: 'Sub'
+};
+
+// Function Constructor
+var Person = function(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+}
+
+// prototype...method
+Person.prototype.calcAge = function(){
+    console.log(2019 - this.yearOfBirth);
+}
+
+// instantiation
+var edgar = new Person('Edgar', 1992, 'Sub');
+var jackie = new Person('Jackie', 1996, 'Student/Lab Assistant');
+
+edgar.calcAge();
+jackie.calcAge();
