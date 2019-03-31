@@ -42,11 +42,13 @@ console.log(mark.lastName);
 
 
 // Object.create
+
 // The Object.create accecpts a second parameter, which helps us move things along at a faster pace.
 // One of the biggest benefits of Object.create is that it allows us to implement a really complex inheritant structures in an easier way than function constructors. Allows us to directly specify which object should be a prototype.
 // The function constructor is still the most popular way of working with objects in JavaScript.
 
 // First: we have to write the prototype as a simple object.
+/*
 var personProto = {
     calcAge: function() {
       console.log(2016 - this.yearOfBirth);
@@ -64,8 +66,48 @@ var jane = Object.create(personProto,
     yearOfBirth: { value: 1992 },
     job: { value: 'Cook' }
 });
+*/
 
 
+// Primitives vs Objects
+
+// A big difference between primitives and objects is that variables containing primitives actually hold the  datat in that variable itself.
+// On objects its different, variables associated with objects do not actualy contain the object, but instead they contain a reference to the place in memory, where the object sits, so where the object is stored.
+// A variable declared as an object does not have a real copy of the object, it just points to that object.
+
+// Start with Primitives
+var a = 23;
+var b = a;
+a = 46 ;
+console.log(a);
+console.log(b);
+
+// doing same with objects.
+var obj1 = {
+    name: 'John',
+    age: 26,
+};
+var obj2 = obj1;
+obj1.age = 30;
+console.log(obj1);
+console.log(obj2);
+
+// Functions
+var age = 27;
+var obj = {
+    name: 'Jonas',
+    city: 'Lisbon',
+};
+
+function change(a,b){
+    a = 30;
+    b.city = 'San Francisco';
+}
+
+change(age,obj);
+
+console.log(age);
+console.log(obj.city);
 
 
 
