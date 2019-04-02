@@ -109,6 +109,8 @@ change(age,obj);
 console.log(age);
 console.log(obj.city);
 
+// Notes: So again, we do not pass an object into a function, but only the reference that points to the object.
+// So when we then change the object inside of the function it is still reflected outside fo the function.
 
 
 
