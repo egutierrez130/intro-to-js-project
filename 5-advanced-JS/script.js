@@ -71,11 +71,12 @@ var jane = Object.create(personProto,
 
 // Primitives vs Objects
 
-// A big difference between primitives and objects is that variables containing primitives actually hold the  datat in that variable itself.
+// A big difference between primitives and objects is that variables containing primitives actually hold the  data in that variable itself.
 // On objects its different, variables associated with objects do not actualy contain the object, but instead they contain a reference to the place in memory, where the object sits, so where the object is stored.
 // A variable declared as an object does not have a real copy of the object, it just points to that object.
 
 // Start with Primitives
+/*
 var a = 23;
 var b = a;
 a = 46 ;
@@ -108,9 +109,60 @@ change(age,obj);
 
 console.log(age);
 console.log(obj.city);
+*/
 
 // Notes: So again, we do not pass an object into a function, but only the reference that points to the object.
 // So when we then change the object inside of the function it is still reflected outside fo the function.
+
+/******************************
+* First Class Functions: Passing Functions as Arguments
+*/
+
+// A function is an instance of the Object type;
+// A function behaves like any other object;
+// We can store functions in a variable;
+// We can pass a function as an argument to another function;
+// We can return a function from a function.
+
+var years = [1990, 1965, 1937, 2005, 1998];
+
+function arrayCalc(arr, fn) {
+    var arrRes = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrRes.push(fn(arr[i]));
+    }
+    return arrRes;
+}
+
+function calculateAge(el) {
+    return 2016 - el;
+}
+
+function isFullAge(el) {
+    return el >= 18;
+}
+
+function maxHeartRate(el) {
+    if (el >= 18 && el <= 81) {
+        return Math.round(206.9 - (0.67 * el));
+    } else {
+        return -1;
+    }
+}
+
+var ages = arrayCalc(years, calculateAge);
+var fullAges = arrayCalc(ages, isFullAge);
+var rates = arrayCalc(ages, maxHeartRate);
+
+
+console.log(ages);
+console.log(rates);
+
+
+
+
+
+
 
 
 
