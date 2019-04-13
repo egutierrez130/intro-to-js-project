@@ -124,6 +124,7 @@ console.log(obj.city);
 // We can pass a function as an argument to another function;
 // We can return a function from a function.
 
+/*
 var years = [1990, 1965, 1937, 2005, 1998];
 
 function arrayCalc(arr, fn) {
@@ -157,7 +158,37 @@ var rates = arrayCalc(ages, maxHeartRate);
 
 console.log(ages);
 console.log(rates);
+*/
+/*******************************************
+* Lecutre: Functions returning Functions
+*/
 
+function interviewQuestion(job) {
+    if (job === 'designer') {
+        return function(name) {
+            console.log(name + ', can you please explain what UX design is?');
+        }
+    } else if (job === 'teacher') {
+        return function(name) {
+            console.log('What subject do you teach, ' + name + '?');
+        }
+    } else {
+        return function(name) {
+            console.log('Hello ' + name + ', what do you do?');
+        }
+    }
+}
+
+var teacherQuestion = interviewQuestion('teacher');
+var designerQuestion = interviewQuestion('designer');
+
+teacherQuestion('John');
+designerQuestion('Edgar');
+designerQuestion('Mark');
+teacherQuestion('Daniel');
+
+// another way to call the function from above
+interviewQuestion('teacher')('Edgar');
 
 
 
