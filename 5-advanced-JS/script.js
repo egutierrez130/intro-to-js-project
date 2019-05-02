@@ -162,7 +162,7 @@ console.log(rates);
 /*******************************************
 * Lecutre: Functions returning Functions
 */
-
+/*
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
@@ -189,6 +189,51 @@ teacherQuestion('Daniel');
 
 // another way to call the function from above
 interviewQuestion('teacher')('Edgar');
+*/
+
+
+/******************************************
+* Lecture: Immediately Invoked Function Expressions(IIFE)
+*/
+
+// we created a new scope, this is hidden from the outside scope
+// we did not create this code to be reused. Just for data privacy.
+// with this, we obtain data privacy and also don't interfere with other variables in our global executioon context.
+/*
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+})();
+
+(function (goodLuck) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuck);
+})(5);
+*/
+// the argument goodLuck is passed at the end of the function.
+// which in our case was 5.
+// the function should always return true for the second IIFE
+
+
+
+/************************************
+* Lecture: Closures
+*/
+
+function retirement(retirementAge) {
+    var a = ' years left until retirement.';
+    return function(yearOfBirth) {
+        var age = 2016 - yearOfBirth;
+        console.log((retirementAge - age) + a);
+    }
+}
+
+var retirementUS = retirement(66);
+retirementUS(1990);
+
+
+
+
 
 
 
