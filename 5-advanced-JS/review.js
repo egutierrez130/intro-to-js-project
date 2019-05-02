@@ -94,7 +94,7 @@ console.log(rates);
 
 
 // Lecture: Functions returning Functions
-
+/*
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
@@ -119,6 +119,29 @@ teacherQuestion('John');
 designerQuestion('Jane');
 
 interviewQuestion('teacher')('Mark');
+*/
+
+
+
+// Lecture: IIFE
+// IIFE allows you to maintain data privacy and also does not interfere with other variables in our global execution context.
+
+// function game() {
+//     var score = Math.random() * 10;
+//     console.log(score >=5);
+// }
+// game();
+
+(function() {
+  var score = Math.random() * 10;
+  console.log(score >= 5);
+})();
+
+
+(function(goodLuck) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck);
+})(5);
 
 
 
