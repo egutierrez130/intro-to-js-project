@@ -149,7 +149,7 @@ game();
 
 // Lecture: Closures
 // An inner function always has access to the variables and parameters of its outer function, even after the outer function has returned.
-
+/*
 function retirement(retirementAge) {
     var a = ' years left until retirement.';
     return function(yearOfBirth) {
@@ -184,12 +184,78 @@ var teacherQuestion = interviewQuestion('teacher');
 teacherQuestion('Edgar');
 
 interviewQuestion('architect')('Andrew');
+*/
+
+
+
+// Lecture: Bind, call and apply
+
+var john = {
+    name: 'John',
+    age: 25,
+    job: 'teacher',
+    presentation: function(style,timeOfDay) {
+        if (style === 'formal') {
+            console.log('Good ' + timeOfDay + ', Ladies and Gentlemen! I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+        } else if (style === 'friendly') {
+            console.log('Hey! What\'s up? I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+        }
+    }
+};
+
+var emily = {
+    name: 'Emily',
+    age: 35,
+    job: 'designer'
+};
+
+john.presentation('formal', 'morning');
+
+// Used the call method to borrow from the john object, which was presentation.
+john.presentation.call(emily, 'friendly', 'afternoon');
+
+// Used the apply method.
+//john.presentation.apply(emily, ['friendly', 'afteroon']);
+
+// Used the bind method.
+var johnFriendly = john.presentation.bind(john, 'friendly');
+
+johnFriendly('morning');
+johnFriendly('night');
+
+var emilyFormal = john.presentation.bind(emily,'formal');
+
+emilyFormal('afternoon');
 
 
 
 
+//********** Need to go over this example again. Part of bind, call, apply lecture.
 
+var years = [1990, 1965, 1937, 2005, 1998];
 
+function arrayCalc(arr, fn) {
+    var arrRes = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrRes.push(fn(arr[i]));
+    }
+    return arrRes;
+}
+
+// Call-back functions
+function calculateAge(el) {
+    return 2016 - el;
+}
+
+function isFullAge(limit, el) {
+    return el >= limit;
+}
+
+var ages = arrayCalc(years, calculateAge);
+
+var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+console.log(fullJapan);
+console.log(ages);
 
 
 
