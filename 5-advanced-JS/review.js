@@ -257,14 +257,18 @@ var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 console.log(fullJapan);
 console.log(ages);
 
+////////////////////////////
+/*
+* Notes/Explanations on Coding Challenge 7
+
+* This works becuase the new operator here creates a new empty object, then it calls the question function and sets the this variable of this function to the new empty object that was just created. And therefore when we then set all of these properties off to this variable, these will be assigned to the this variable of the new object. And that new object will then be stored here in the q1,the variable right, or as you already know actually that the q1 variable will hold a reference to the spot in memory where the object hits and then we can of course use our newly created object.
+* var q1 = new Question("What is the 10 x 10?", [20, 1000, 100],2);
 
 
 
 
 
-
-
-
+*/
 
 
 //
